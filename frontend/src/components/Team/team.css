@@ -1,0 +1,177 @@
+.bgbox-wrapper {
+  width: min(1320px, calc(100% - 48px));
+  margin: 0 auto 34px;
+}
+
+.bgbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(24px, 5vw, 58px) clamp(16px, 4vw, 42px);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: var(--surface);
+}
+
+.meet-our-team {
+  width: 100%;
+}
+
+.meet-our-team .heading {
+  margin: 0 0 26px;
+  color: var(--ink);
+  font-size: clamp(2.4rem, 6vw, 4.7rem);
+  font-weight: 650;
+  letter-spacing: -0.075em;
+  text-align: center;
+}
+
+.team-member-role {
+  margin: 18px 0 22px;
+  color: var(--teal-dark);
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  font-weight: 650;
+  letter-spacing: -0.05em;
+  text-align: center;
+}
+
+.team-members2,
+.team-members,
+.team-members1 {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  justify-items: center;
+  gap: 16px;
+  margin: 0 auto 34px;
+}
+
+.bgbox .card {
+  width: min(100%, 290px);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #f7f5ef;
+  box-shadow: none;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.bgbox .card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.team-member {
+  padding: 18px 16px 0;
+  text-align: center;
+}
+
+.image-container {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 13px;
+  background: #e8eee5;
+}
+
+.rounded-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 350ms ease;
+}
+
+.bgbox .card:hover .rounded-avatar {
+  transform: scale(1.04);
+}
+
+.social-media-icons {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 999px;
+  background: rgba(28, 33, 30, 0.78);
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.image-container:hover .social-media-icons,
+.image-container:focus-within .social-media-icons {
+  opacity: 1;
+}
+
+.social-media-icons a {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  color: #fff;
+}
+
+.social-media-icons a:hover {
+  color: var(--lime);
+}
+
+.social-media-icons a[href="#"] {
+  display: none;
+}
+
+.team-member-name {
+  margin: 14px 0 6px;
+  color: var(--ink);
+  font-size: 1.08rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.outer-position {
+  margin: 0 -16px;
+  padding: 12px;
+  border-top: 1px solid var(--line);
+  background: #f0efe7;
+}
+
+.team-member-position {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 650;
+}
+
+@media (max-width: 600px) {
+  .bgbox-wrapper {
+    width: calc(100% - 28px);
+  }
+
+  .team-members2,
+  .team-members,
+  .team-members1 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .team-member {
+    padding: 10px 10px 0;
+  }
+
+  .team-member-name {
+    font-size: 0.95rem;
+  }
+
+  .outer-position {
+    margin-inline: -10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-media-icons {
+    opacity: 1;
+  }
+}
